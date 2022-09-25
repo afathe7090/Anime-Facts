@@ -22,18 +22,15 @@ extension Resolver {
         }.implements(SynaposisUseCaseProtocol.self)
         
         
-        register { resolver, argument in
-            SynaposisViewModel()
-        }.implements(SynaposisViewModelProtocol.self)
+        register { SynaposisViewModel() }
+        .implements(SynaposisViewModelProtocol.self)
         
-        
-        
-        
-        register {SynaposisVC()}
-        .resolveProperties { resolver, service in
-//            resolver.resolve(<#T##type: Service.Type##Service.Type#>, name: <#T##Name?#>, args: <#T##Any?#>)
+                
+        register { (resolver , argument)-> SynaposisVC in
+            let synaposisVc = SynaposisVC()
+            resolver.resolve(SynaposisViewModel.self).animeSynaposis = argument()
+            return synaposisVc
         }
-        
     }
     
     

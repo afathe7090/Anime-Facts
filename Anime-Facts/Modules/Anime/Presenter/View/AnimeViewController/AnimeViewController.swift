@@ -27,7 +27,7 @@ class AnimeViewController: UIViewController {
     
     private lazy var seaconBackView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+        view.backgroundColor = .tertiarySystemBackground
         return view
     }()
     
@@ -35,6 +35,7 @@ class AnimeViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: customCollectionViewLayout())
         collectionView.register(UINib(nibName: SeasonCell.cellId, bundle: nil)
                                 , forCellWithReuseIdentifier: SeasonCell.cellId)
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
@@ -44,6 +45,7 @@ class AnimeViewController: UIViewController {
         tableView.separatorColor = UIColor.darkGray
         tableView.separatorInset = .init(top: 0, left: 15, bottom: 0, right: 20)
         tableView.backgroundColor = .clear
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 1))
         tableView.rowHeight = 100
         tableView.dataSource = self
         tableView.register(AnimeCell.self, forCellReuseIdentifier: "Cell")
@@ -70,14 +72,8 @@ class AnimeViewController: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-    
     //-----------------------------------------------------------------------------------
-    //=======>MARK: -  Skeletenable
+    //=======>MARK: -  Helper Functins
     //-----------------------------------------------------------------------------------
     
     func tableViewSkeleton(){
@@ -85,7 +81,7 @@ class AnimeViewController: UIViewController {
         tableView.showAnimatedGradientSkeleton()
     }
     
-    
+
     //-----------------------------------------------------------------------------------
     //=======>MARK: -  Layout COnstraints
     //-----------------------------------------------------------------------------------

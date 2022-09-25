@@ -81,11 +81,15 @@ class AnimeViewModel: AnimeViewModelProtocol {
             .delay(RxTimeInterval.seconds(2), scheduler: MainScheduler.instance)
             .subscribe(onNext:{[weak self] animes in
                 guard let self = self else { return }
-                self.animesArray = animes
-                self.bindingCases.onNext(.reloadData)
-                self.bindingCases.onNext(.stopSkeltonAnimation)
+                self.asyneAnime(animes)
             }).disposed(by: bag)
     }
     
+    fileprivate func asyneAnime(_ animes: [Anime]){
+        animesArray = animes
+        bindingCases.onNext(.reloadData)
+        bindingCases.onNext(.stopSkeltonAnimation)
+    }
 }
+
 

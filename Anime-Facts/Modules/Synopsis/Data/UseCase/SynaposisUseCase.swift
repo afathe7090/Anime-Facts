@@ -9,11 +9,12 @@ import Foundation
 import Resolver
 
 protocol SynaposisUseCaseProtocol: AnyObject {
-    
 }
 
 
 class SynaposisUseCase: SynaposisUseCaseProtocol {
+    
+    
     
     @Injected var repo: SynaposisRepo
     

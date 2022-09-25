@@ -9,6 +9,7 @@ import UIKit
 import SkeletonView
 import RxSwift
 import RxCocoa
+import Resolver
 
 //-----------------------------------------------------------------------------------
 //=======>MARK: -  Delgation of skeleton
@@ -29,10 +30,23 @@ extension AnimeViewController: SkeletonTableViewDataSource{
         return viewModel.cellIdentifier
     }
     
+    
+    
+    
+    
     func deSelectTableView(){
-        tableView.rx.itemSelected.map({$0}).subscribe(onNext: { index in
+        tableView.rx.itemSelected.map({$0}).subscribe(onNext: { [weak self] index in
+            guard let self = self else {return}
+            let anime = self.viewModel.animesArray[index.row]
+            self.synaposisViewControllerPresenting(anime)
             self.tableView.deselectRow(at: index, animated: true)
         }).disposed(by: bag)
+    }
+    
+    fileprivate func synaposisViewControllerPresenting(_ anime: Anime){
+        let synaposis: SynaposisVC = Resolver.resolve(SynaposisVC.self , args: anime)
+        let navigationSynaposis = UINavigationController(rootViewController: synaposis)
+        self.present(navigationSynaposis, animated: true, completion: nil)
     }
     
 }
@@ -50,12 +64,13 @@ extension AnimeViewController {
     
     
     func startSelectedSeasonType(){
-        seasonCollectionView.rx.modelSelected(String.self).subscribe(onNext: { season in
+        seasonCollectionView.rx.itemSelected.map({$0.row}).subscribe(onNext: { row in
             self.tableViewSkeleton()
-            self.viewModel.fetchAnimes(Season.init(rawValue: season)!)
+            let season = Season.allCases[row]
+            self.viewModel.fetchAnimes(season)
         }).disposed(by: bag)
-        
     }
+    
     
     
 }

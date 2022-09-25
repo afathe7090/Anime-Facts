@@ -15,6 +15,8 @@ extension Resolver: ResolverRegistering{
         animeDependicesService()
         
         registerNetworkMoyaService()
+        
+        configureSynopsisServices()
     }
     
 }

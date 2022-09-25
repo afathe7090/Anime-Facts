@@ -197,8 +197,8 @@
 		74EAACC928DABAA9006901C8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				74F8147528DC10A100648660 /* Synopsis */,
 				74EAACCB28DABB2A006901C8 /* Anime */,
+				74F8147528DC10A100648660 /* Synopsis */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -394,7 +394,6 @@
 				F84B059D7697C28FF66EFCFA /* Pods-Anime-Facts.debug.xcconfig */,
 				E0489F313DB4D86188F9010E /* Pods-Anime-Facts.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -679,6 +678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V4XXQXQMM4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anime-Facts/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -706,6 +706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V4XXQXQMM4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anime-Facts/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
