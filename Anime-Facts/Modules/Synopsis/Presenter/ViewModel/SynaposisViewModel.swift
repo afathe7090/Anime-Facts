@@ -13,6 +13,7 @@ import Resolver
 
 protocol SynaposisViewModelProtocol: AnyObject{
     var animeSynaposis: Anime? { get set }
+    func synaposisAsObserver()-> Observable<String>
 }
 
 
@@ -21,5 +22,13 @@ class SynaposisViewModel: SynaposisViewModelProtocol{
     
     var animeSynaposis: Anime?
     @Injected var useCase: SynaposisUseCaseProtocol
+    
+    
+    func synaposisAsObserver()-> Observable<String> {
+        return Observable<String>.just(animeSynaposis?.synopsis ?? "")
+        
+    }
+    
+    
     
 }

@@ -75,26 +75,16 @@ class SynaposisVC: UIViewController {
     }()
     
     
-    private lazy var synaposisScrollView: UIScrollView = {
-        let scroll = UIScrollView(frame: .zero)
-        scroll.backgroundColor = .clear
-        return scroll
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.layer.cornerRadius = 10
+        tableView.clipsToBounds = true
+        tableView.backgroundColor = .clear
+        return tableView
     }()
-    
-    private lazy var containerView: UIView =  {
-        let container = UIView()
-        container.backgroundColor = .clear
-        return container
-    }()
-    
-    
-    
-    private lazy var synaposisLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        return label
-    }()
-    
     
     
     
@@ -110,12 +100,12 @@ class SynaposisVC: UIViewController {
         configrueLayout()
         
         asyneDataTOComponants()
+        configureTableViewObserve()
     }
     
     //-----------------------------------------------------------------------------------
     //=======>MARK: -  Helper Functions
     //-----------------------------------------------------------------------------------
-    
     
     
     
@@ -136,8 +126,7 @@ class SynaposisVC: UIViewController {
         configureImageOfAnime()
         configureTitleOfAnimeLabel()
         configureMembersStackView()
-        configureSynaposisLabel()
-        
+        configureTableVIewLayout()
         
         func configureSeparatorViewLayOut(){
             view.addSubview(separatorNavigationView)
@@ -161,8 +150,8 @@ class SynaposisVC: UIViewController {
             view.addSubview(animeTitle)
             animeTitle.snp.makeConstraints({
                 $0.top.equalTo(animeImage.snp.bottom).offset(25)
-                $0.leading.equalTo(view).offset(-20)
-                $0.trailing.equalTo(view).offset(20)
+                $0.leading.equalTo(view).offset(20)
+                $0.trailing.equalTo(view).offset(-20)
             })
         }
         
@@ -174,23 +163,30 @@ class SynaposisVC: UIViewController {
             })
         }
         
-        func configureSynaposisLabel(){
-            view.addSubview(synaposisLabel)
-            synaposisLabel.snp.makeConstraints({
+        
+        
+        func configureTableVIewLayout(){
+            view.addSubview(tableView)
+            tableView.snp.makeConstraints({
                 $0.top.equalTo(membersStackView.snp.bottom).offset(10)
-                $0.leading.equalTo(view).offset(20)
-                $0.trailing.equalTo(view).offset(-20)
+                $0.leading.equalTo(view.snp.leading).offset(10)
+                $0.trailing.equalTo(view.snp.trailing).offset(-10)
+                $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             })
         }
+
         
     }
     
+    
+    //-----------------------------------------------------------------------------------
+    //=======>MARK: -
+    //-----------------------------------------------------------------------------------
     
     fileprivate func asyneDataTOComponants(){
         guard let anime = viewModel.animeSynaposis else { return }
         animeTitle.text = anime.title
         membersCounterLabel.text = anime.members.formatted()
-        synaposisLabel.text = anime.synopsis
         animeImage.setImage(anime.image_url)
     }
     
@@ -203,7 +199,19 @@ class SynaposisVC: UIViewController {
     }
     
     
-    
-    
+    fileprivate func configureTableViewObserve(){
+        
+        Observable.just("w")
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) {
+                _ , _ , cell in
+                cell.textLabel?.textAlignment = .justified
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.text = "\(self.viewModel.animeSynaposis?.synopsis ?? "")"
+            }.disposed(by: bag)
+        
+    }
     
 }
+
+
