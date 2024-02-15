@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742E3D7E2B7E44C2000ED93B /* Anime_FactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3D7D2B7E44C2000ED93B /* Anime_FactsTests.swift */; };
 		743EAB0928DADA5E00D5FEE3 /* AnimeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743EAB0828DADA5E00D5FEE3 /* AnimeTarget.swift */; };
 		743EAB0B28DADB8400D5FEE3 /* AnimeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743EAB0A28DADB8400D5FEE3 /* AnimeProvider.swift */; };
 		743EAB0D28DADC4E00D5FEE3 /* AnimeNetworkInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743EAB0C28DADC4E00D5FEE3 /* AnimeNetworkInjection.swift */; };
@@ -38,7 +39,19 @@
 		A74917AFE700F67395C2D16C /* Pods_Anime_Facts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3282C1ADE619097D8A9BC9B /* Pods_Anime_Facts.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		742E3D7F2B7E44C2000ED93B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74EAAC9228DAAD22006901C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74EAAC9928DAAD22006901C8;
+			remoteInfo = "Anime-Facts";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		742E3D7B2B7E44C2000ED93B /* Anime-FactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anime-FactsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		742E3D7D2B7E44C2000ED93B /* Anime_FactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_FactsTests.swift; sourceTree = "<group>"; };
 		743EAB0828DADA5E00D5FEE3 /* AnimeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeTarget.swift; sourceTree = "<group>"; };
 		743EAB0A28DADB8400D5FEE3 /* AnimeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeProvider.swift; sourceTree = "<group>"; };
 		743EAB0C28DADC4E00D5FEE3 /* AnimeNetworkInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeNetworkInjection.swift; sourceTree = "<group>"; };
@@ -75,6 +88,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		742E3D782B7E44C2000ED93B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74EAAC9728DAAD22006901C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +112,14 @@
 				B3282C1ADE619097D8A9BC9B /* Pods_Anime_Facts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		742E3D7C2B7E44C2000ED93B /* Anime-FactsTests */ = {
+			isa = PBXGroup;
+			children = (
+				742E3D7D2B7E44C2000ED93B /* Anime_FactsTests.swift */,
+			);
+			path = "Anime-FactsTests";
 			sourceTree = "<group>";
 		};
 		743EAB0728DADA4900D5FEE3 /* NetworingMoya */ = {
@@ -148,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				74EAAC9C28DAAD22006901C8 /* Anime-Facts */,
+				742E3D7C2B7E44C2000ED93B /* Anime-FactsTests */,
 				74EAAC9B28DAAD22006901C8 /* Products */,
 				A5EA6BF7B930F93F2F9DC95B /* Pods */,
 				332529DD530975D43E0071AD /* Frameworks */,
@@ -158,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				74EAAC9A28DAAD22006901C8 /* Anime-Facts.app */,
+				742E3D7B2B7E44C2000ED93B /* Anime-FactsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,6 +430,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		742E3D7A2B7E44C2000ED93B /* Anime-FactsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 742E3D832B7E44C2000ED93B /* Build configuration list for PBXNativeTarget "Anime-FactsTests" */;
+			buildPhases = (
+				742E3D772B7E44C2000ED93B /* Sources */,
+				742E3D782B7E44C2000ED93B /* Frameworks */,
+				742E3D792B7E44C2000ED93B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				742E3D802B7E44C2000ED93B /* PBXTargetDependency */,
+			);
+			name = "Anime-FactsTests";
+			productName = "Anime-FactsTests";
+			productReference = 742E3D7B2B7E44C2000ED93B /* Anime-FactsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		74EAAC9928DAAD22006901C8 /* Anime-Facts */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74EAACAE28DAAD23006901C8 /* Build configuration list for PBXNativeTarget "Anime-Facts" */;
@@ -426,9 +474,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					742E3D7A2B7E44C2000ED93B = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 74EAAC9928DAAD22006901C8;
+					};
 					74EAAC9928DAAD22006901C8 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -448,11 +500,19 @@
 			projectRoot = "";
 			targets = (
 				74EAAC9928DAAD22006901C8 /* Anime-Facts */,
+				742E3D7A2B7E44C2000ED93B /* Anime-FactsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		742E3D792B7E44C2000ED93B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74EAAC9828DAAD22006901C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +568,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		742E3D772B7E44C2000ED93B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				742E3D7E2B7E44C2000ED93B /* Anime_FactsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74EAAC9628DAAD22006901C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,6 +610,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		742E3D802B7E44C2000ED93B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74EAAC9928DAAD22006901C8 /* Anime-Facts */;
+			targetProxy = 742E3D7F2B7E44C2000ED93B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		74EAACA828DAAD23006901C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -554,6 +630,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		742E3D812B7E44C2000ED93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tocaan.Anime-FactsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Anime-Facts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Anime-Facts";
+			};
+			name = Debug;
+		};
+		742E3D822B7E44C2000ED93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tocaan.Anime-FactsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Anime-Facts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Anime-Facts";
+			};
+			name = Release;
+		};
 		74EAACAC28DAAD23006901C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -729,6 +852,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		742E3D832B7E44C2000ED93B /* Build configuration list for PBXNativeTarget "Anime-FactsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				742E3D812B7E44C2000ED93B /* Debug */,
+				742E3D822B7E44C2000ED93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		74EAAC9528DAAD22006901C8 /* Build configuration list for PBXProject "Anime-Facts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
