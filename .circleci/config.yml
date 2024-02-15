@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  build:
+    macos:
+      xcode: "12.0.0"
+    steps:
+      - checkout
+      - run:
+          name: Install CocoaPods
+          command: |
+            gem install cocoapods
+
+      - run:
+          name: Install Pods
+          command: |
+            pod install
+
+      - run:
+          name: Build iOS App
+          command: |
+            xcodebuild \
+              -workspace Anime-Facts.xcworkspace \ # Update with your workspace file
+              -scheme Anime-Facts \             # Update with your scheme
+              -destination 'platform=iOS Simulator,name=iPhone 11' \ # Update with your desired destination
+              build
