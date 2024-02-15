@@ -14,4 +14,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run shell script
-      run: bash yourscript.sh  # specify the filename of your shell script
+      run: bash deploy-testflight.sh  # specify the filename of your shell script
